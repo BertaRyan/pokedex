@@ -61,6 +61,19 @@ position: absolute;
     padding:5px;
     font-size:14px;
     overflow-y:scroll;
+    scrollbar-color: rgb(82, 255, 47) black;
+        /* thumb color | track color */
+}
+
+
+.screen::-webkit-scrollbar{
+    border: 1px solid rgb(82, 255, 47);
+}
+
+/* Scrollbar thumb (draggable part) */
+.scrollable::-webkit-scrollbar-thumb {
+    background: blue !important;
+    border-radius: 5px;
 }
 
 .screen .header{
