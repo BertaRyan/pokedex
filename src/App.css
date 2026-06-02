@@ -1,0 +1,25 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+@font-face {
+    font-family: 'Pokemon';
+      src: url('/Pokemon.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+}
+
+.app-bg{
+  background:  url("./assets/background-hero.webp");
+  width:100%;
+  min-height: 100dvh;
+  background-size:cover;
+  object-fit:cover;
+  background-repeat: no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
