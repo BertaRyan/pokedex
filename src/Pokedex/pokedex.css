@@ -88,10 +88,9 @@ position: absolute;
     color:rgb(82, 255, 47);
     top:98px;;
     right:65px;
-    width:30%;
-    height: 190px;
-    max-height:170px;
-    padding:5px;
+    width:240px;
+    height: 170px;
+    padding:9px;
     font-size:14px;
     overflow-y:scroll;
     scrollbar-color: rgb(82, 255, 47) black;
@@ -130,7 +129,115 @@ position: absolute;
     min-width:40%;
     display:flex;
     align-items:end;
-   
     width:max-content;
     margin-bottom:2px;
+}
+
+@media (max-width:800px){
+    .pokedex-container{
+        width:450px;
+    }
+
+    .pokedex-container img{
+        width:100%;
+    }
+
+    .pokemon-sprite{
+        left:60px;
+        width:90px !important;
+        height:90px;
+    }
+    .screen{
+        top:55px;
+        right:37px;
+        width: 30%;
+        height: 100px;
+    }
+
+        @keyframes bounce {
+            from {
+                top: 90px
+            }
+    
+            to {
+                top: 85px
+            }
+        }
+
+        .search-container{
+            bottom:30px;
+            left:30px;
+        }
+
+        .search{
+            width:80%;
+        }
+
+        .btn{
+            width: calc(max-content + 50px);
+            height:30px;
+            border-radius:0%;
+        }
+        .header, .stat-container{
+            flex-direction:column;
+            font-size:16px;
+        }
+
+        .screen .header p{
+            width:100%;
+        }
+}
+@media (max-width: 466px){
+    .pokedex-container {
+            width: 300px;
+        }
+
+                .pokemon-sprite {
+                    left: 40px;
+                    width: 60px !important;
+                    height: 60px;
+                }
+        
+                .screen {
+                    top: 35px;
+                    right: 25px;
+                    width: 30%;
+                    height: 65px;
+                }
+        
+                @keyframes bounce {
+                    from {
+                        top: 60px
+                    }
+        
+                    to {
+                        top: 60px
+                    }
+                }
+
+
+        .search-container {
+            bottom: 15px;
+            left: 20px;
+            }
+            
+        .search {
+            width: 50%;
+        }
+            
+        .btn {
+            width: max-content;
+            height: 20px;
+            border-radius: 0%;
+            font-size:10px;
+        }
+
+        .screen .header p, .screen .header b {
+            width: 100%;
+            font-size:10px;
+        }
+        .stat-container>li{
+            min-width:unset;
+            width:unset;
+        }
 }

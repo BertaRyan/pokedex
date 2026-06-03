@@ -24,8 +24,6 @@ const Pokedex = () => {
             setPokemon({})
             setError({msg:err, err:err})
             
-            console.log(`Error Message: ${err}`)
-            
             setTimeout(() => {
                 setError({msg:"", err:false})
             }, 3000)
@@ -86,7 +84,7 @@ if(enterBtn?.disabled === true){
                   <button onClick={handleSearch} className="start btn">Search</button><button onClick={handleClear} className="clear btn">Clear</button>
               </div>
           </div>
-          
+          <div className="pokedex-right">
         <div className="screen">
               {error.err && <div>The Pokemon you searched for doesn't exist, Check your spelling</div>}
            {isLoading ? <div className="loading"></div> : <> <div className="header">
@@ -113,6 +111,7 @@ if(enterBtn?.disabled === true){
               </div>}
               </>}
         </div>
+          </div>
     </div>
   )
 }
