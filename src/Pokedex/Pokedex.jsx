@@ -5,7 +5,7 @@ import  pokedexImg  from "../assets/poke-dex copy.webp"
 const Pokedex = () => {
     const [pokemon, setPokemon] = useState({})
     const [inputValue, setInputValue] =useState("")
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setLoading] = useState(false)
     const [error, setError] = useState({msg:"", err: false})
     const enterBtn = document.querySelector('.start')
 
@@ -80,7 +80,7 @@ if(enterBtn?.disabled === true){
       <div className="pokedex-container">
           <img src={pokedexImg} alt="Pokedex" />
           <div className="pokedex-left">
-              {isLoading ? <div className="loading-img pokemon-sprite"></div> : pokemon.img && <img className="pokemon-sprite" src={pokemon?.img} alt="Pokemon" /> }
+              { pokemon.img && <img className="pokemon-sprite" src={pokemon?.img} alt="Pokemon" /> }
               <div className="search-container">
                   <input className="search" type="text" onKeyPress={handleKeyChange}onChange={handleChange} placeholder='Search for Pokemon' value={inputValue} />
                   <button onClick={handleSearch} className="start btn">Search</button><button onClick={handleClear} className="clear btn">Clear</button>

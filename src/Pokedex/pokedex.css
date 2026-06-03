@@ -18,17 +18,6 @@
     animation:spinning .2s linear infinite;
 }
 
-.loading-img {
-    position: absolute;
-    z-index: 4;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: 5px solid limegreen;
-    border-left-color: red;
-    animation: spinning .2s linear infinite;
-}
-
 @keyframes spinning{
     from{
         transform:rotate(0deg)
