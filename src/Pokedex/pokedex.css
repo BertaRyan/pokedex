@@ -49,6 +49,16 @@
     left:110px;
     width:150px;
     height:150px;
+    animation: bounce 1s linear  infinite 2s alternate;
+}
+
+@keyframes bounce {
+    from{
+        top:170px
+    }
+    to{
+        top: 160px
+    }
 }
 
 .search-container{
