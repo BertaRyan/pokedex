@@ -186,6 +186,13 @@ position: absolute;
         .screen .header p{
             width:100%;
         }
+        .loading {
+            left: 25%;
+            top: 10%;
+            transform: translateX(-5%);
+            width: 80px;
+            height: 80px;
+        }
 }
 @media (max-width: 466px){
     .pokedex-container {
@@ -239,5 +246,12 @@ position: absolute;
         .stat-container>li{
             min-width:unset;
             width:unset;
+        }
+        .loading{
+            left: 25%;
+            top: 10%;
+            transform: translateX(-5%);
+            width:50px;
+            height:50px;
         }
 }
