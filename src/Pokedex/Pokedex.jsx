@@ -76,7 +76,13 @@ if(enterBtn?.disabled === true){
     }, 1000)
 }
 
-   
+document.addEventListener('click', (e) => {
+    console.log(e.target)
+const searchInput = document.querySelector('.search')
+if(e.target !== searchInput){
+    setInputValue("")
+}
+})
 
     useEffect(() => {
         getPokemon("charmander")
