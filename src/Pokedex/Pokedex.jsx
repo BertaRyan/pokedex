@@ -98,7 +98,7 @@ if(e.target !== searchInput){
           <div className="pokedex-left">
               { pokemon.img && <img className="pokemon-sprite" src={pokemon?.img} alt="Pokemon" /> }
               <div className="search-container">
-                  <input  className="search" type="text" onKeyPress={handleKeyChange}onChange={handleChange} placeholder='Search for Pokemon' value={inputValue} />
+                  <input id='pokemonSearchInput'  className="search" type="text" onKeyPress={handleKeyChange}onChange={handleChange} placeholder='Search for Pokemon' value={inputValue} />
                   <ul className={inputValue ? "search-dropdown" : "hide"} >
                     { inputValue && filteredPokemonList.map(item => {
                         return <li onClick={() => {getPokemon(item.name)}}>{item.name}</li>
