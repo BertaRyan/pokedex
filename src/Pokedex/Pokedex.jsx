@@ -77,7 +77,6 @@ if(enterBtn?.disabled === true){
 }
 
 document.addEventListener('click', (e) => {
-    console.log(e.target)
 const searchInput = document.querySelector('.search')
 if(e.target !== searchInput){
     setInputValue("")
