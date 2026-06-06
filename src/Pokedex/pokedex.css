@@ -63,6 +63,29 @@ position: absolute;
     display:block;   
 }
 
+.search-dropdown{
+    position:absolute;
+    top:28px;
+    left:0;
+    background:white;
+    height:max-content;
+    max-height:100px;
+    min-height:50px;
+    width:170px;
+    overflow-Y:scroll;
+    overflow-x:hidden;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius: 5px;
+}
+
+.hide{
+    display:none;
+}
+
+.search-dropdown{
+    cursor:pointer;
+}
+
 .btn{
     padding:2px 5px;
     margin:5px 10px 0 0;

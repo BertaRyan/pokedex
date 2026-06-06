@@ -8,7 +8,17 @@ const Pokedex = () => {
     const [isLoading, setLoading] = useState(false)
     const [error, setError] = useState({msg:"", err: false})
     const enterBtn = document.querySelector('.start')
+    const [allPokemon, setAllPokemon] = useState([])
 
+    const getAllPokemon = async() => {
+        try{
+            const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1500")
+             const {results} = await resp.json()
+            setAllPokemon(results)
+        } catch(e) {
+            console.log(e)
+        }
+    }
 
     const getPokemon = async(input) => {
         try{
@@ -18,6 +28,7 @@ const Pokedex = () => {
             
             const { name, stats, moves: abilities,  sprites: {  front_default : img }, types:[{type: {name: pokeType}}]} = data
             setPokemon({ name, stats, abilities, img, pokeType })
+            setInputValue("")
             setLoading(false)
         } catch(err){
             setLoading(false)
@@ -31,7 +42,6 @@ const Pokedex = () => {
     }
 
     const handleChange = (e) => {
-        
         setInputValue(e.target.value)
     }
 
@@ -70,9 +80,11 @@ if(enterBtn?.disabled === true){
 
     useEffect(() => {
         getPokemon("charmander")
-        
+        getAllPokemon()
       
     }, [])
+
+    const filteredPokemonList = allPokemon.filter(poke => poke.name.includes(inputValue))
 
   return (
       <div className="pokedex-container">
@@ -81,6 +93,11 @@ if(enterBtn?.disabled === true){
               { pokemon.img && <img className="pokemon-sprite" src={pokemon?.img} alt="Pokemon" /> }
               <div className="search-container">
                   <input className="search" type="text" onKeyPress={handleKeyChange}onChange={handleChange} placeholder='Search for Pokemon' value={inputValue} />
+                  <ul className={inputValue ? "search-dropdown" : "hide"} >
+                    {inputValue && filteredPokemonList.map(item => {
+                        return <li onClick={() => {getPokemon(item.name)}}>{item.name}</li>
+                    })}
+                  </ul>
                   <button onClick={handleSearch} className="start btn">Search</button><button onClick={handleClear} className="clear btn">Clear</button>
               </div>
           </div>
