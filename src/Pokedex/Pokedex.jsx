@@ -42,7 +42,7 @@ const Pokedex = () => {
     }
 
     const handleChange = (e) => {
-        setInputValue(e.target.value)
+        setInputValue(e.target.value.toLowerCase())
     }
 
     const handleKeyChange = (e) => {
