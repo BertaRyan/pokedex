@@ -70,7 +70,6 @@ position: absolute;
     background:white;
     height:max-content;
     max-height:100px;
-    min-height:50px;
     width:170px;
     overflow-Y:scroll;
     overflow-x:hidden;
@@ -216,6 +215,9 @@ position: absolute;
             width: 80px;
             height: 80px;
         }
+        .search-dropdown{
+            width: 138px;
+        }
 }
 @media (max-width: 466px){
     .pokedex-container {
@@ -277,4 +279,8 @@ position: absolute;
             width:50px;
             height:50px;
         }
+
+                 .search-dropdown {
+                     width: 90px;
+                 }
 }
